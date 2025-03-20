@@ -37,4 +37,4 @@ I'm an indie developer building my version of the digital world one step at a ti
 #
 <details>
  <summary><h3>👨‍💻 My Coding Journey</h3></summary>
-I started my coding journey as a passionate computer science student, eager to learn everything about programming, Website, and especially automotive technology. Initially, I focused on web development. Now, I’m learning embedded programming, real-time operating systems, and automotive communication protocols, all with the goal of creating my own product for the automotive industry. I'm ready to step out of my comfort zone, streamline my YouTube content to focus on this goal, and start turning this dream into reality in 2024.
+
