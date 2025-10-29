@@ -33,6 +33,7 @@ I'm an indie developer building my version of the digital world one step at a ti
 ### 📊 Stats
 
 ![DucAnhETERNAL's GitHub stats](https://github-readme-stats.vercel.app/api?username=DucAnhETERNAL&show_icons=true&theme=dracula)
+![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=LevelUpInTech&hide=TeX&layout=compact)
 
 #
 <details>
