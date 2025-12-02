@@ -1,2 +1,19 @@
-- name: TryHackMe Badge Workflow
-  uses: p4p1/tryhackme-badge-workflow@1.0.0
+name: TryHackMe Update Badge
+on:
+  schedule:
+    - cron: '0 0 * * *' # Tự động chạy vào 0h sáng mỗi ngày
+  workflow_dispatch: # Cho phép bạn bấm nút chạy thủ công bất cứ lúc nào
+
+jobs:
+  tryhackme-badge-update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      
+      - name: Update TryHackMe Badge
+        uses: p4p1/tryhackme-badge-workflow@main
+        with:
+          username: 'duca90746'
+          user_public_id: '6317648'
+          image_path: './assets/thm_badge.png' # Ảnh sẽ được lưu vào đây
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
