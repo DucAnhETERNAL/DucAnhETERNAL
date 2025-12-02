@@ -1,19 +1,34 @@
 name: TryHackMe Update Badge
 on:
   schedule:
-    - cron: '0 0 * * *' # Tự động chạy vào 0h sáng mỗi ngày
-  workflow_dispatch: # Cho phép bạn bấm nút chạy thủ công bất cứ lúc nào
+    - cron: '0 0 * * *' # Chạy 0h sáng hàng ngày
+  workflow_dispatch: # Nút chạy thủ công
 
 jobs:
-  tryhackme-badge-update:
+  update-badge:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write # Cấp quyền ghi đè file bắt buộc
     steps:
-      - uses: actions/checkout@v2
-      
-      - name: Update TryHackMe Badge
-        uses: p4p1/tryhackme-badge-workflow@main
-        with:
-          username: 'duca90746'
-          user_public_id: '6317648'
-          image_path: './assets/thm_badge.png' # Ảnh sẽ được lưu vào đây
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - uses: actions/checkout@v3
+
+      - name: Create assets folder if not exists
+        run: mkdir -p assets
+
+      - name: Download Badge Image
+        # Lệnh này tải ảnh trực tiếp từ server TryHackMe về lưu vào thư mục assets
+        run: |
+          curl -L -o assets/thm_badge.png "https://tryhackme-badges.s3.amazonaws.com/duca90746.png"
+
+      - name: Commit and Push changes
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add assets/thm_badge.png
+          # Kiểm tra xem có gì thay đổi không rồi mới commit
+          if git diff --staged --quiet; then
+            echo "Ảnh chưa thay đổi, không cần update."
+          else
+            git commit -m "Update TryHackMe badge daily"
+            git push
+          fi
