@@ -32,6 +32,7 @@ I'm an indie developer building my version of the digital world one step at a ti
 
 ![DucAnhETERNAL's GitHub stats](https://github-readme-stats-rouge-tau-ayuei91t21.vercel.app/api?username=DucAnhETERNAL&show_icons=true&theme=dark)
 ![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=DucAnhETERNAL&hide=TeX&layout=compact&theme=dark)
+![tryhackme stats](https://raw.githubusercontent.com/duca90746/duca90746/master/assets/thm_propic.png)
 
 #
 <details>
