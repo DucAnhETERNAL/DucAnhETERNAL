@@ -18,7 +18,7 @@ jobs:
       - name: Download Badge Image
         # Lệnh này tải ảnh trực tiếp từ server TryHackMe về lưu vào thư mục assets
         run: |
-          curl -L -o assets/thm_badge.png "https://tryhackme-badges.s3.amazonaws.com/duca90746.png"
+          curl -L -o assets/thm_badge.png "https://tryhackme-badges.s3.amazonaws.com/3T3RN4L.png"
 
       - name: Commit and Push changes
         run: |
